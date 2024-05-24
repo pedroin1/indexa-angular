@@ -1,6 +1,7 @@
 <main-container>
   <app-header></app-header>
-  <app-separator>A</app-separator>
-  <app-separator>B</app-separator>
-  <app-separator>C</app-separator>
+  @for (letra of alfabeto; track letra) {
+  <app-separator>{{ letra }}</app-separator>
+  <app-contato></app-contato>
+  }
 </main-container>
