@@ -1,0 +1,31 @@
+.contato-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.nome-contato {
+  font-weight: bold;
+  font-family: Montserrat;
+}
+
+.buttons-contato-container {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.button-contato {
+  background: transparent;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 400px) {
+  .contato-container {
+    flex-direction: column;
+  }
+}

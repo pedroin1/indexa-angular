@@ -1,1 +1,12 @@
-<span>ANA MARIA - 21231312</span>
+<section class="contato-container">
+  <span class="nome-contato">{{ nome }}</span>
+  <span>{{ telefone }}</span>
+  <div class="buttons-contato-container">
+    <button class="button-contato">
+      <img src="/assets/pencil-square.png" alt="icon_pencil" />
+    </button>
+    <button (click)="cliquei()" class="button-contato">
+      <img src="/assets/trash.png" alt="icon_pencil" />
+    </button>
+  </div>
+</section>
