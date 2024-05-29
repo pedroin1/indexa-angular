@@ -1,0 +1,110 @@
+<section class="form-section-container">
+  <div class="header-form">
+    <img class="logo" src="../../../assets/logo.png" alt="logo" />
+    <a routerLink="/">&nbsp;Voltar</a>
+    <img
+      class="banner"
+      src="../../../assets/adicionar-contato.png"
+      alt="banner"
+    />
+    <h1>Adicionar Contato</h1>
+  </div>
+  <app-separator></app-separator>
+  <form [formGroup]="contatoForm" (ngSubmit)="salvarContato()">
+    <div class="input-form-container">
+      <div class="input-form-item">
+        <label for="nome">Nome</label>
+        <input
+          required="true"
+          id="nome"
+          type="text"
+          placeholder="Digite o nome do contato"
+          formControlName="nome"
+        />
+      </div>
+      @if (contatoForm.get("nome")?.errors && contatoForm.get("nome")?.touched)
+      {
+      <div class="error-message">
+        <span>* O nome é obrigatório !</span>
+      </div>
+      }
+      <div class="input-form-item">
+        <label for="telefone">Telefone</label>
+        <input
+          id="telefone"
+          type="number"
+          placeholder="Digite o numero de telefone do contato"
+          formControlName="telefone"
+        />
+      </div>
+      @if (contatoForm.get("telefone")?.errors &&
+      contatoForm.get("telefone")?.touched) {
+      <div class="error-message">
+        <span>* O telefone é obrigatório !</span>
+      </div>
+      }
+      <div class="input-form-item">
+        <label for="email">E-mail</label>
+        <input
+          id="email"
+          type="email"
+          placeholder="Digite o email do contato"
+          formControlName="email"
+        />
+      </div>
+      @if (contatoForm.get("email")?.errors?.['required'] &&
+      contatoForm.get("email")?.touched) {
+      <div class="error-message">
+        <span>* O email é obrigatório !</span>
+      </div>
+      } @if (contatoForm.get("email")?.errors?.['email']) {
+      <div class="error-message">
+        <span>* Email no formato inválido !</span>
+      </div>
+      }
+    </div>
+    <div class="input-form-opt-container">
+      <div class="input-form-item">
+        <label for="aniversario">Aniversário</label>
+        <input
+          class="input-data"
+          id="aniversario"
+          type="date"
+          placeholder="Data de nascimento"
+          formControlName="aniversario"
+        />
+      </div>
+      <div class="input-form-item">
+        <label for="redes">Redes sociais</label>
+        <div class="container-redes">
+          <span class="span-http">http://</span>
+          <input
+            id="redes"
+            type="url"
+            placeholder="Seu portifolio"
+            formControlName="redeSocial"
+          />
+        </div>
+      </div>
+      <div class="input-form-item">
+        <label for="observacoes">Observações</label>
+        <textarea
+          class="observacoes-area"
+          id="observacoes"
+          placeholder="Coloque observações nesse espaço.  Exemplo: “Instrutora da academia “Nova Imagem”, amiga da Júlia”."
+          formControlName="observacao"
+        ></textarea>
+      </div>
+    </div>
+    <div class="button-container">
+      <button (click)="cancelar()" class="button-cancelar">Cancelar</button>
+      <button
+        [disabled]="contatoForm.invalid"
+        [ngClass]="contatoForm.valid ? 'button-salvar' : 'button-disabled'"
+        (click)="salvarContato()"
+      >
+        Salvar Contato
+      </button>
+    </div>
+  </form>
+</section>

@@ -1,0 +1,146 @@
+.form-section-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+
+  h1 {
+    font-family: Montserrat;
+    font-size: 28px;
+    color: #0d6efd;
+    margin-bottom: 32px;
+    margin-top: 10px;
+  }
+
+  a {
+    align-self: flex-start;
+    background: transparent;
+    color: #0d6efd;
+    font-family: Montserrat;
+
+    &::before {
+      content: "←";
+      font-size: 18px;
+      display: inline-block;
+    }
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+.logo {
+  width: 200px;
+}
+
+.banner {
+  width: 200px;
+}
+
+.input-form-container {
+  border-bottom: 1px solid #6c757d;
+}
+
+.input-form-container,
+.input-form-opt-container {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 0px;
+}
+
+.input-form-item {
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  margin: 10px auto;
+
+  label {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Montserrat;
+  }
+
+  input {
+    padding: 6px 12px;
+    border: 0.5px solid #c1c1c1;
+    font-family: Montserrat;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+}
+
+.container-redes {
+  display: flex;
+  input {
+    flex: 1;
+  }
+}
+
+.observacoes-area {
+  padding: 6px 12px;
+  border: 1px solid #ced4da;
+  height: 80px;
+  border-radius: 4px;
+}
+
+.input-data {
+  width: 200px;
+}
+
+.span-http {
+  font-size: 16px;
+  padding: 6px 12px;
+  background-color: #e9ecef;
+  border: 0.5px solid #c1c1c1;
+  border-right: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  font-family: Montserrat;
+}
+
+.button-container {
+  display: flex;
+  gap: 24px;
+
+  button {
+    flex: 1 1 100px;
+    font-family: Montserrat;
+    font-weight: bold;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+}
+
+.button-cancelar {
+  background: transparent;
+  color: #0d6efd;
+  border-radius: 4px;
+  border: 1px solid #0d6efd;
+}
+
+.button-salvar {
+  background: #0d6efd;
+  color: white;
+  border-radius: 4px;
+}
+
+.button-disabled {
+  background: #6c757d;
+  color: white;
+  border-radius: 4px;
+  cursor: not-allowed !important;
+}
+
+.error-message {
+  margin: 6px 0;
+  color: red;
+  font-family: Montserrat;
+}

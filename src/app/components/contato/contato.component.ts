@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-contato',
+  selector: 'lista-contatos',
   standalone: true,
   imports: [],
   templateUrl: './contato.component.html',
